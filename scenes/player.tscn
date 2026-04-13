@@ -3,10 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://5mj1k7n5f60m" path="res://scenes/abstract/entity.tscn" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dgvx5xhlqh2a1" path="res://scripts/player.gd" id="2_g2els"]
 
-[node name="Entity" unique_id=2005212084 instance=ExtResource("1_3vyb7")]
+[node name="Player" unique_id=2005212084 instance=ExtResource("1_3vyb7")]
 script = ExtResource("2_g2els")
 
 [node name="Pivot" type="Node3D" parent="." index="2" unique_id=1677780014]
 
 [node name="Camera3D" type="Camera3D" parent="Pivot" index="0" unique_id=1902437536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Pivot/Camera3D" index="0" unique_id=221564645]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+target_position = Vector3(0, -2, 0)
