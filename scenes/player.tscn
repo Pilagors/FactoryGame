@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://dnk52hcntc2as"]
 
 [ext_resource type="PackedScene" uid="uid://5mj1k7n5f60m" path="res://scenes/abstract/entity.tscn" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dgvx5xhlqh2a1" path="res://scripts/player.gd" id="2_g2els"]
 
 [node name="Entity" unique_id=2005212084 instance=ExtResource("1_3vyb7")]
+script = ExtResource("2_g2els")
 
-[node name="Camera3D" type="Camera3D" parent="." index="2" unique_id=1902437536]
+[node name="Pivot" type="Node3D" parent="." index="2" unique_id=1677780014]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot" index="0" unique_id=1902437536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
