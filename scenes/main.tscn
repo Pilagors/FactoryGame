@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://4ka073lxmtxx"]
 
 [ext_resource type="PackedScene" uid="uid://dnk52hcntc2as" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://b1i1a7m7qa4ny" path="res://scenes/tool_axe.tscn" id="2_0wfyh"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_sgp6g"]
-size = Vector2(40, 40)
+[sub_resource type="BoxMesh" id="BoxMesh_0wfyh"]
+size = Vector3(40, 0.2, 40)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o5qli"]
-data = PackedVector3Array(20, 0, 20, -20, 0, 20, 20, 0, -20, -20, 0, 20, -20, 0, -20, 20, 0, -20)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0wfyh"]
+points = PackedVector3Array(-20, -0.1, -20, -20, 0.1, -20, 20, -0.1, -20, -20, -0.1, 20, -20, 0.1, 20, 20, 0.1, -20, 20, -0.1, 20, 20, 0.1, 20)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_top_color = Color(0.13243836, 0.4873997, 0.63731444, 1)
@@ -24,10 +25,10 @@ sky = SubResource("Sky_0wfyh")
 [node name="Sol" type="StaticBody3D" parent="." unique_id=2027048851]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Sol" unique_id=1294208227]
-mesh = SubResource("PlaneMesh_sgp6g")
+mesh = SubResource("BoxMesh_0wfyh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sol" unique_id=91829626]
-shape = SubResource("ConcavePolygonShape3D_o5qli")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sol" unique_id=1006836864]
+shape = SubResource("ConvexPolygonShape3D_0wfyh")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=442851379]
 environment = SubResource("Environment_o5qli")
@@ -38,3 +39,8 @@ shadow_enabled = true
 
 [node name="Player" parent="." unique_id=2005212084 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1860824, 0)
+
+[node name="Items" type="Node3D" parent="." unique_id=643384551]
+
+[node name="Axe" parent="Items" unique_id=125261653 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.700407, 1.4591136, -4.9010487)

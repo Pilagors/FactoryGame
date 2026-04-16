@@ -3,9 +3,9 @@ extends CharacterBody3D
 
 enum EntityState { IDLE, MOVING, INTERACTING, BUSY }
 
-var state: EntityState = EntityState.IDLE
-var move_speed: float = 10.0
-var inventory: Inventory = Inventory.new()
+@export var state: EntityState = EntityState.IDLE
+@export var move_speed: float = 10.0
+@export var inventory: Inventory = Inventory.new()
 
 func _ready() -> void:
 	for i in range(9):
