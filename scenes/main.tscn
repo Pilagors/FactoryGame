@@ -44,3 +44,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1860824, 0)
 
 [node name="Axe" parent="Items" unique_id=125261653 instance=ExtResource("2_0wfyh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.700407, 1.4591136, -4.9010487)
+
+[node name="Axe" parent="." unique_id=1233452475 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3036036, 0.099999905, -10.406267)
+
+[node name="Axe2" parent="." unique_id=25181609 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3454075, 0.099999905, -12.979004)
+
+[node name="Axe3" parent="." unique_id=1857185894 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035607338, 0.099999905, -8.827456)
+
+[node name="Axe4" parent="." unique_id=882693567 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.989286, 0.10000014, -11.100405)
+
+[node name="Axe5" parent="." unique_id=645828334 instance=ExtResource("2_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5730581, 0.099999905, -13.938981)

@@ -19,6 +19,7 @@ func _on_pickup_zone_entered(body: Node3D) -> void:
 	
 	if body.inventory.add_item(item):
 		queue_free()
+		player.update_show.emit()
 		
 func _physics_process(delta: float) -> void:
 	_move_if_player(delta)

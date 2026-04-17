@@ -35,7 +35,7 @@ func add_item(new_item: Item, amount: int = 1) -> bool:
 	
 	for slot in all_slots:
 		if slot and slot.item == new_item:
-			var space_left = slot.limit - slot.quantity
+			var space_left = slot.item.limit - slot.quantity
 			
 			if space_left > 0:
 				var amount_to_add = min(amount, space_left)
