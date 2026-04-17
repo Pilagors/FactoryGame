@@ -24,12 +24,12 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _unhandled_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
 			hotbar_index = (hotbar_index + 1) % inventory.hotbar_slots.size()
 			_on_active_slot_changed()
 		
-		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+		elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN and event.is_pressed():
 			hotbar_index = (hotbar_index - 1 + inventory.hotbar_slots.size()) % inventory.hotbar_slots.size()
 			_on_active_slot_changed()
 	
@@ -43,8 +43,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_active_slot_changed():
 	var current_slot = inventory.hotbar_slots[hotbar_index]
+	inventory.hotbar_index = hotbar_index
+	inventory.update_ui.emit()
 	if current_slot.item and current_slot.item is UsableItem:
-		print("outil équipé :", current_slot)
+		print("outil équipé :", current_slot.item)
 
 func _update_movement(delta: float) -> void:
 	var direction := Vector3.ZERO

@@ -6,6 +6,8 @@ signal update_ui
 @export var hotbar_slots: Array[Slot] = []
 @export var backpack_slots: Array[Slot] = []
 
+var hotbar_index: int = 0
+
 func can_pickup(item: Item) -> bool:
 	if _find_empty_slot(hotbar_slots) != -1 or _find_item_slot(hotbar_slots, item) != -1:
 		return true
