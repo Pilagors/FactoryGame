@@ -6,9 +6,18 @@ signal update_ui
 @export var hotbar_slots: Array[Slot] = []
 @export var backpack_slots: Array[Slot] = []
 
+func can_pickup(item: Item) -> bool:
+	if _find_empty_slot(hotbar_slots) != -1 or _find_item_slot(hotbar_slots, item) != -1:
+		return true
+	
+	if _find_empty_slot(backpack_slots) != -1 or _find_item_slot(backpack_slots, item) != -1:
+		return true
+	
+	return false
+
 func _find_item_slot(slots: Array[Slot], item: Item) -> int:
 	for i in range(slots.size()):
-		if slots[i] and slots[i].item == item and slots[i].limit != slots[i].quantity:
+		if slots[i] and slots[i].item == item and slots[i].limit > slots[i].quantity:
 			return i
 	return -1
 
@@ -36,7 +45,7 @@ func add_item(new_item: Item, amount: int = 1) -> bool:
 		for slot in all_slots:
 			if slot and slot.item == null:
 				slot.item = new_item
-				var amount_to_add = min(amount, slot.limit)
+				var amount_to_add = min(amount, new_item.limit)
 				slot.quantity = amount_to_add
 				amount -= amount_to_add
 				

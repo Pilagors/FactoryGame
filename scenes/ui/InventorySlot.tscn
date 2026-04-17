@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://d0082461n282y"]
+
+[ext_resource type="Script" uid="uid://dbgmc1ss16jtt" path="res://scripts/inventory_slot.gd" id="1_y842j"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_y842j"]
+size = Vector2(100, 100)
+
+[node name="Panel" type="PanelContainer" unique_id=1014120883]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_y842j")
+
+[node name="Quantity" type="Label" parent="." unique_id=983400311]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 16
+text = "99"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1073283726]
+layout_mode = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1096550179]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+size_2d_override = Vector2i(100, 100)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=354253306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Mesh" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=824765356]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=1072481781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Background" type="TextureRect" parent="." unique_id=778304620]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_y842j")

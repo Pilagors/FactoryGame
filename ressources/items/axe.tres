@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UsableItem" format=3 uid="uid://dgj24a4xk60w4"]
+
+[ext_resource type="Script" uid="uid://ckfc5b5dsur4d" path="res://scripts/item_usable.gd" id="1_cf8u4"]
+[ext_resource type="ArrayMesh" uid="uid://djns3h6g1meim" path="res://assets/tool_axe/toolAxe.obj" id="1_cn3ie"]
+
+[sub_resource type="MeshTexture" id="MeshTexture_2ihf2"]
+mesh = ExtResource("1_cn3ie")
+
+[resource]
+script = ExtResource("1_cf8u4")
+type = 2
+name = "Regular Axe"
+icon = SubResource("MeshTexture_2ihf2")
+mesh = ExtResource("1_cn3ie")
+limit = 1
+metadata/_custom_type_script = "uid://ckfc5b5dsur4d"
